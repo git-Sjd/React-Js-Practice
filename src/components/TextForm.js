@@ -3,6 +3,22 @@ import React, { useState } from 'react'
 export default function TextForm(props) {
     const [text, setText] = useState("Please Enter your text here!")
 
+    const people = [
+        { name: 'aman', age: 12, city: 'kolkata' },
+        { name: 'john', age: 25, city: 'new york' },
+        "Kolkata", "patna",
+        { name: 'mary', age: 30, city: 'los angeles' },
+        { name: 'alex', age: 20, city: 'london' },
+        { name: 'sara', age: 28, city: 'paris' },
+        { name: 'michael', age: 35, city: 'tokyo' },
+        { name: 'emily', age: 19, city: 'sydney' },
+        { name: 'david', age: 22, city: 'toronto' },
+        "Delhi",
+        { name: 'jane', age: 26, city: 'berlin' },
+        { name: 'peter', age: 24, city: 'mumbai' }
+    ]
+
+
     const textChangeToUper = () => {
         //console.log("Button was clicked")
         // if (text != toUpperCase()) {
@@ -44,6 +60,33 @@ export default function TextForm(props) {
                 <h2 className=''>Preview of your text is : </h2>
                 <p>{text}</p>
 
+            </div>
+            <div>
+                {
+                    people.map((user, index) => {
+                        console.log(user, index)
+                        let result;
+                        const { name, age, city } = user;
+                        console.log(typeof user)
+                        if (typeof user === 'string') {
+                            result = user;
+                        }
+                        return <div>
+                            {
+                                result ?
+                                    user
+                                    :
+                                    <>
+                                        {name}
+                                        {' '}
+                                        {age}
+                                        {' '}
+                                        {city}
+                                    </>
+                            }
+                        </div>
+                    })
+                }
             </div>
         </>
     )

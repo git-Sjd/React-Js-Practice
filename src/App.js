@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import About from './components/About';
+import Feedback from './components/Feedback';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 
@@ -16,6 +17,7 @@ function App() {
         <TextForm heading="Please Enter your text in below box" />
       </div>
       <About />
+      <Feedback />
 
     </>
   );
